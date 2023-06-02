@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mzingaa/utils/colors.dart';
+import 'package:mzingaa/widgets/small_text.dart';
 
 class BigText extends StatelessWidget {
   final String text;
@@ -37,23 +38,28 @@ class _MainLiquorPageState extends State<MainLiquorPage> {
             margin: const EdgeInsets.only(top: 45, bottom: 15),
             padding: const EdgeInsets.only(left: 20, right: 20),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    BigText(text: "Kenya", color: AppColors.mainColor),
-                    const Text("House"),
+                    const BigText(text: "Kenya", color: AppColors.mainColor),
+                    Row(
+                      children: [
+                        SmallText(text: "Nairobi", color: Colors.black54),
+                        const Icon(Icons.arrow_drop_down_rounded),
+                      ],
+                    ),
                   ],
                 ),
-                Center(
-                  child: Container(
-                    width: 45,
-                    height: 45,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      color: AppColors.mainColor,
-                    ),
-                    child: const Icon(Icons.search, color: Colors.white),
+                Container(
+                  width: 45,
+                  height: 45,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: AppColors.mainColor,
                   ),
+                  child: const Icon(Icons.search, color: Colors.white),
                 ),
               ],
             ),
