@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mzingaa/home/liqour_page_body.dart';
 import 'package:mzingaa/utils/colors.dart';
 import 'package:mzingaa/widgets/small_text.dart';
 
@@ -63,7 +64,8 @@ class _MainLiquorPageState extends State<MainLiquorPage> {
                 ),
               ],
             ),
-          )
+          ),
+          LiqourPageBody(),
         ],
       ),
     );
