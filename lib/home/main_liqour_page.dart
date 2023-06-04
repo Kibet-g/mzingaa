@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:mzingaa/home/liqour_page_body.dart';
 import 'package:mzingaa/utils/colors.dart';
@@ -26,6 +28,7 @@ class MainLiquorPage extends StatefulWidget {
   const MainLiquorPage({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _MainLiquorPageState createState() => _MainLiquorPageState();
 }
 

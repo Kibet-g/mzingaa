@@ -24,10 +24,14 @@ class _LiqourPageBodyState extends State<LiqourPageBody> {
   Widget _buildPageItem(int index) {
     return Container(
       height: 220,
-      margin: EdgeInsets.only(left: 5, right: 5),
+      margin: const EdgeInsets.only(left: 5, right: 5),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30),
-        color: const Color(0xFF69c5df),
+        color: index.isEven ? const Color(0xFF800080) : const Color(0xFF4682B4),
+        image: const DecorationImage(
+          image: AssetImage("assets/Image/alcohol.jpg"),
+          fit: BoxFit.cover,
+        ),
       ),
     );
   }

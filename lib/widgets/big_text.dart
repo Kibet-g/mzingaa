@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
+// ignore: must_be_immutable
 class BigText extends StatelessWidget {
    Color? color;//color for our color variable
   final String text;// the text we pass from the color function
