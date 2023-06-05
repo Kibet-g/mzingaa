@@ -39,6 +39,7 @@ class _MainLiquorPageState extends State<MainLiquorPage> {
       body: Column(
         children: [
           Container(
+            //here should not be hard coded also for device compatabilty
             margin: const EdgeInsets.only(top: 45, bottom: 15),
             padding: const EdgeInsets.only(left: 20, right: 20),
             child: Row(
@@ -47,7 +48,7 @@ class _MainLiquorPageState extends State<MainLiquorPage> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const BigText(text: "Kenya", color: AppColors.mainColor),
+                    const BigText(text: "Kenya", color: AppColors.turquoiseColor),
                     Row(
                       children: [
                         SmallText(text: "Nairobi", color: Colors.black54),

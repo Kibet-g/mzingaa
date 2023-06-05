@@ -1,3 +1,4 @@
+import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:mzingaa/home/main_liqour_page.dart';
 import 'package:mzingaa/utils/colors.dart';
@@ -36,18 +37,33 @@ class _LiqourPageBodyState extends State<LiqourPageBody> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 320,
-      child: PageView.builder(
-        controller: pageController,
-        itemCount: 5,
-        itemBuilder: (context, position) {
-          return _buildPageItem(position);
-        },
-      ),
+    return Column(
+      children: [
+        Container(
+          height: 320,
+          child: PageView.builder(
+            controller: pageController,
+            itemCount: 5,
+            itemBuilder: (context, position) {
+              return _buildPageItem(position);
+            },
+          ),
+        ),
+    //FLUTTER PACKAGE FOR OUR DOT SCROLLING EFFECT
+    new DotsIndicator(
+    dotsCount: 5,
+    position: currPageValue,
+    decorator: DotsDecorator(
+      activeColor: AppColors.turquoiseColor,
+    size: const Size.square(9.0),
+    activeSize: const Size(18.0, 9.0),
+    activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
+    ),
+    )
+      ],
     );
   }
-
+//THis logic mathetmathics behind widget scrolling
   Widget _buildPageItem(int index) {
     Matrix4 matrix = Matrix4.identity();
     if (index == currPageValue.floor()) {
@@ -66,7 +82,7 @@ class _LiqourPageBodyState extends State<LiqourPageBody> {
       matrix = Matrix4.diagonal3Values(1, currScale, 1);
       matrix = Matrix4.diagonal3Values(1, currScale, 1)..setTranslationRaw(0, currTrans, 0);
     } else {
-      var currScale = 0.0;
+      var currScale = 0.8;
       matrix = Matrix4.diagonal3Values(1, currScale, 1)..setTranslationRaw(0, _height * (1 - scaleFactor) / 2, 1);
     }
 
@@ -92,8 +108,24 @@ class _LiqourPageBodyState extends State<LiqourPageBody> {
               height: 120,
               margin: const EdgeInsets.only(left: 30, right: 30, bottom: 30),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
+                borderRadius: BorderRadius.circular(20),
                 color: Colors.white,
+                boxShadow: [
+                  BoxShadow(
+                    color: Color(0xFFe8e8e8),
+                    blurRadius: 5.0,//to create a shadow in our container
+                    offset: Offset(-5,-5)
+                  ),
+                  BoxShadow(
+                    color: Colors.white,
+                    offset: Offset(-5,0)
+                  ),
+                  BoxShadow(
+                      color: Colors.white,
+                      offset: Offset(5,0)
+                  ),
+
+                ]
               ),
               child: Container(
                 padding: EdgeInsets.only(top: 10, left: 15, right: 15),
@@ -117,6 +149,7 @@ class _LiqourPageBodyState extends State<LiqourPageBody> {
                     ),
                     SizedBox(height: 20,),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         IconAndTextWidget(
                           icon: Icons.circle_sharp,
