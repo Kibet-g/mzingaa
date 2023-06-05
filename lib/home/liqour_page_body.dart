@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mzingaa/home/main_liqour_page.dart';
 import 'package:mzingaa/utils/colors.dart';
+import 'package:mzingaa/widgets/icon_and%20text_widget.dart';
 import 'package:mzingaa/widgets/small_text.dart';
 
 class LiqourPageBody extends StatefulWidget {
@@ -80,6 +81,22 @@ class _LiqourPageBodyState extends State<LiqourPageBody> {
                   SizedBox(height: 20,),
                   Row(
                     children: [
+                      IconAndTextWidget(icon: Icons.circle_sharp,
+                          text: "Normal",
+
+                          iconcolor: AppColors.orangeColor,
+                      ),
+
+                      IconAndTextWidget(icon: Icons.location_on,
+                        text: "1.7KM",
+
+                        iconcolor: AppColors.turquoiseColor,
+                      ),
+                      IconAndTextWidget(icon: Icons.access_time_rounded,
+                        text: "32min",
+
+                        iconcolor: AppColors.redColor,
+                      ),
 
                     ],
                   )
