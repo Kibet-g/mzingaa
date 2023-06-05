@@ -51,7 +51,7 @@ class _MainLiquorPageState extends State<MainLiquorPage> {
                     Row(
                       children: [
                         SmallText(text: "Nairobi", color: Colors.black54),
-                        const Icon(Icons.arrow_drop_down_rounded),
+                        const Icon(Icons.arrow_drop_down_rounded),//here is our small icon
                       ],
                     ),
                   ],
