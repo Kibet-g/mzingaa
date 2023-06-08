@@ -2,6 +2,7 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:mzingaa/home/main_liqour_page.dart';
 import 'package:mzingaa/utils/colors.dart';
+import 'package:mzingaa/utils/dimensions.dart';
 import 'package:mzingaa/widgets/icon_and%20text_widget.dart';
 import 'package:mzingaa/widgets/small_text.dart';
 
@@ -16,7 +17,7 @@ class _LiqourPageBodyState extends State<LiqourPageBody> {
   PageController pageController = PageController(viewportFraction: 0.85);
   var currPageValue = 0.0;
   double scaleFactor = 0.0;
-  double _height = 220;
+  double _height = Dimensions.pageViewContainer;
 
   @override
   void initState() {
@@ -91,7 +92,7 @@ class _LiqourPageBodyState extends State<LiqourPageBody> {
       child: Stack(
         children: [
           Container(
-            height: 220,
+            height: Dimensions.pageViewContainer,
             margin: const EdgeInsets.only(left: 10, right: 10),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
@@ -105,7 +106,7 @@ class _LiqourPageBodyState extends State<LiqourPageBody> {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              height: 120,
+              height: Dimensions.pageViewContainer,
               margin: const EdgeInsets.only(left: 30, right: 30, bottom: 30),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
