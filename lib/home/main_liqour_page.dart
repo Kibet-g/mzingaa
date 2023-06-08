@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:mzingaa/home/liqour_page_body.dart';
 import 'package:mzingaa/utils/colors.dart';
+import 'package:mzingaa/utils/dimensions.dart';
 import 'package:mzingaa/widgets/small_text.dart';
 
 class BigText extends StatelessWidget {
@@ -41,7 +42,7 @@ class _MainLiquorPageState extends State<MainLiquorPage> {
           Container(
             //here should not be hard coded also for device compatabilty
             margin: const EdgeInsets.only(top: 45, bottom: 15),
-            padding: const EdgeInsets.only(left: 20, right: 20),
+            padding:  EdgeInsets.only(left: Dimensions.width20, right: Dimensions.width20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

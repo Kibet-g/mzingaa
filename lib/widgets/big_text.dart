@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:mzingaa/utils/dimensions.dart';
 
 // ignore: must_be_immutable
 class BigText extends StatelessWidget {
@@ -11,7 +12,7 @@ class BigText extends StatelessWidget {
 
    BigText({Key? key, this.color = const Color(0xFFccc7c5),
     required this.text,
-    this.size=20,
+    this.size=0,
     this.overflow=TextOverflow.ellipsis// the default property for ..function
 
   }) : super(key: key);
@@ -25,7 +26,7 @@ class BigText extends StatelessWidget {
       style: TextStyle(
         fontFamily: 'Roboto',
         color: color,
-        fontSize: size,
+        fontSize: size==0?Dimensions.font20:size,
         fontWeight: FontWeight.w400
 
       ),
