@@ -161,7 +161,7 @@ class _LiqourPageBodyState extends State<LiqourPageBody> {
                             ),
                           ),
                         ),
-                        SizedBox(width: 10),
+                        const SizedBox(width: 10),
                         SmallText(text: "4.5"),
                         SizedBox(width: 10),
                         SmallText(text: "1287"),
