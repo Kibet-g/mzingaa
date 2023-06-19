@@ -183,7 +183,7 @@ class _LiqourPageBodyState extends State<LiqourPageBody> {
                           text: "1.7KM",
                           iconcolor: AppColors.turquoiseColor,
                         ),
-                        IconAndTextWidget(
+                        const IconAndTextWidget(
                           icon: Icons.access_time_rounded,
                           text: "32min",
                           iconcolor: AppColors.redColor,
