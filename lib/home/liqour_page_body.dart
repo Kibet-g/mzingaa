@@ -178,7 +178,7 @@ class _LiqourPageBodyState extends State<LiqourPageBody> {
                           text: "Normal",
                           iconcolor: AppColors.orangeColor,
                         ),
-                        IconAndTextWidget(
+                        const IconAndTextWidget(
                           icon: Icons.location_on,
                           text: "1.7KM",
                           iconcolor: AppColors.turquoiseColor,
