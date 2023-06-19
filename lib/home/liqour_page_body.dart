@@ -15,7 +15,7 @@ class LiqourPageBody extends StatefulWidget {
 
 class _LiqourPageBodyState extends State<LiqourPageBody> {
   PageController pageController = PageController(viewportFraction: 0.85);
-  var currPageValue = 0.0;
+  double currPageValue = 0.0;
   double scaleFactor = 0.8;
   double _height = Dimensions.pageViewContainer;
 
@@ -41,7 +41,7 @@ class _LiqourPageBodyState extends State<LiqourPageBody> {
     return Column(
       children: [
         Container(
-          height:Dimensions.pageView,
+          height: Dimensions.pageView,
           child: PageView.builder(
             controller: pageController,
             itemCount: 5,
@@ -50,21 +50,23 @@ class _LiqourPageBodyState extends State<LiqourPageBody> {
             },
           ),
         ),
-    //FLUTTER PACKAGE FOR OUR DOT SCROLLING EFFECT
-    new DotsIndicator(
-    dotsCount: 5,
-    position: currPageValue,
-    decorator: DotsDecorator(
-      activeColor: AppColors.turquoiseColor,
-    size: const Size.square(9.0),
-    activeSize: const Size(18.0, 9.0),
-    activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
-    ),
-    )
+        // FLUTTER PACKAGE FOR OUR DOT SCROLLING EFFECT
+        DotsIndicator(
+          dotsCount: 5,
+          position: currPageValue.toInt(),
+          decorator: DotsDecorator(
+            activeColor: AppColors.turquoiseColor,
+            size: const Size.square(9.0),
+            activeSize: const Size(18.0, 9.0),
+            activeShape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
+          ),
+        ),
       ],
     );
   }
-//THis logic mathetmathics behind widget scrolling
+
+
   Widget _buildPageItem(int index) {
     Matrix4 matrix = Matrix4.identity();
     if (index == currPageValue.floor()) {
@@ -75,16 +77,18 @@ class _LiqourPageBodyState extends State<LiqourPageBody> {
     } else if (index == currPageValue.floor() + 1) {
       var currScale = scaleFactor + (currPageValue - index + 1) * (1 - scaleFactor);
       var currTrans = _height * (1 - currScale) / 2;
-      matrix = Matrix4.diagonal3Values(1, currScale, 1);
-      matrix = Matrix4.diagonal3Values(1, currScale, 1)..setTranslationRaw(0, currTrans, 0);
+      matrix = Matrix4.diagonal3Values(1, currScale, 1)
+        ..setTranslationRaw(0, currTrans, 0);
     } else if (index == currPageValue.floor() - 1) {
       var currScale = 1 - (currPageValue - index) * (1 - scaleFactor);
       var currTrans = _height * (1 - currScale) / 2;
-      matrix = Matrix4.diagonal3Values(1, currScale, 1);
-      matrix = Matrix4.diagonal3Values(1, currScale, 1)..setTranslationRaw(0, currTrans, 0);
+      matrix = Matrix4.diagonal3Values(1, currScale, 1)
+        ..setTranslationRaw(0, currTrans, 0);
     } else {
       var currScale = 0.8;
-      matrix = Matrix4.diagonal3Values(1, currScale, 1)..setTranslationRaw(0, _height * (1 - scaleFactor) / 2, 1);
+      var currTrans = _height * (1 - scaleFactor) / 2;
+      matrix = Matrix4.diagonal3Values(1, currScale, 1)
+        ..setTranslationRaw(0, currTrans, 0);
     }
 
     return Transform(
@@ -93,7 +97,10 @@ class _LiqourPageBodyState extends State<LiqourPageBody> {
         children: [
           Container(
             height: Dimensions.pageViewContainer,
-            margin:  EdgeInsets.only(left: Dimensions.width10, right:Dimensions.width10),
+            margin: EdgeInsets.only(
+              left: Dimensions.width10,
+              right: Dimensions.width10,
+            ),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(Dimensions.radius30),
               color: index.isEven ? const Color(0xFF800080) : const Color(0xFF4682B4),
@@ -107,48 +114,62 @@ class _LiqourPageBodyState extends State<LiqourPageBody> {
             alignment: Alignment.bottomCenter,
             child: Container(
               height: Dimensions.pageViewContainer,
-              margin:  EdgeInsets.only(left: Dimensions.width30, right: Dimensions.width30, bottom: Dimensions.height30),
+              margin: EdgeInsets.only(
+                left: Dimensions.width30,
+                right: Dimensions.width30,
+                bottom: Dimensions.height30,
+              ),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(Dimensions.radius20),
                 color: Colors.white,
                 boxShadow: [
                   BoxShadow(
-                    color: Color(0xFFe8e8e8),
-                    blurRadius: 5.0,//to create a shadow in our container
-                    offset: Offset(-5,-5)
+                    color: const Color(0xFFe8e8e8),
+                    blurRadius: 5.0, // to create a shadow in our container
+                    offset: const Offset(-5, -5),
                   ),
-                  BoxShadow(
+                  const BoxShadow(
                     color: Colors.white,
-                    offset: Offset(-5,0)
+                    offset: Offset(-5, 0),
                   ),
-                  BoxShadow(
-                      color: Colors.white,
-                      offset: Offset(5,0)
+                  const BoxShadow(
+                    color: Colors.white,
+                    offset: Offset(5, 0),
                   ),
-
-                ]
+                ],
               ),
               child: Container(
-                padding: EdgeInsets.only(top: Dimensions.height15, left: 15, right: 15),
+                padding: EdgeInsets.only(
+                  top: Dimensions.height15,
+                  left: 15,
+                  right: 15,
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    BigText(text: "Gilbeys", color: Colors.black,),
-                    SizedBox(height: Dimensions.height10,),
+                    BigText(text: "Gilbeys", color: Colors.black),
+                    SizedBox(height: Dimensions.height10),
                     Row(
                       children: [
                         Wrap(
-                          children: List.generate(5, (index) => Icon(Icons.star, color: AppColors.turquoiseColor, size: 15,)),
+                          children: List.generate(
+                            5,
+                                (index) => Icon(
+                              Icons.star,
+                              color: AppColors.turquoiseColor,
+                              size: 15,
+                            ),
+                          ),
                         ),
-                        SizedBox(width: 10,),
+                        SizedBox(width: 10),
                         SmallText(text: "4.5"),
-                        SizedBox(width: 10,),
+                        SizedBox(width: 10),
                         SmallText(text: "1287"),
-                        SizedBox(width: 10,),
+                        SizedBox(width: 10),
                         SmallText(text: "comments"),
                       ],
                     ),
-                    SizedBox(height: Dimensions.height20,),
+                    SizedBox(height: Dimensions.height20),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -168,7 +189,7 @@ class _LiqourPageBodyState extends State<LiqourPageBody> {
                           iconcolor: AppColors.redColor,
                         ),
                       ],
-                    )
+                    ),
                   ],
                 ),
               ),
