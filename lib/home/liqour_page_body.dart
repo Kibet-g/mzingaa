@@ -15,8 +15,13 @@ class LiqourPageBody extends StatefulWidget {
 
 class _LiqourPageBodyState extends State<LiqourPageBody> {
   PageController pageController = PageController(viewportFraction: 0.85);
+<<<<<<< HEAD
   double currPageValue = 0.0;
   double scaleFactor = 0.8;
+=======
+  var currPageValue = 0.0;
+  double scaleFactor = 0.0;
+>>>>>>> 86caf848873815ae2d95b6b2a5303d48ff2790b2
   double _height = Dimensions.pageViewContainer;
 
   @override
@@ -97,10 +102,14 @@ class _LiqourPageBodyState extends State<LiqourPageBody> {
         children: [
           Container(
             height: Dimensions.pageViewContainer,
+<<<<<<< HEAD
             margin: EdgeInsets.only(
               left: Dimensions.width10,
               right: Dimensions.width10,
             ),
+=======
+            margin: const EdgeInsets.only(left: 10, right: 10),
+>>>>>>> 86caf848873815ae2d95b6b2a5303d48ff2790b2
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(Dimensions.radius30),
               color: index.isEven ? const Color(0xFF800080) : const Color(0xFF4682B4),
@@ -114,11 +123,15 @@ class _LiqourPageBodyState extends State<LiqourPageBody> {
             alignment: Alignment.bottomCenter,
             child: Container(
               height: Dimensions.pageViewContainer,
+<<<<<<< HEAD
               margin: EdgeInsets.only(
                 left: Dimensions.width30,
                 right: Dimensions.width30,
                 bottom: Dimensions.height30,
               ),
+=======
+              margin: const EdgeInsets.only(left: 30, right: 30, bottom: 30),
+>>>>>>> 86caf848873815ae2d95b6b2a5303d48ff2790b2
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(Dimensions.radius20),
                 color: Colors.white,
