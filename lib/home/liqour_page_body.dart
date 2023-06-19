@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:mzingaa/home/main_liqour_page.dart';
 import 'package:mzingaa/utils/colors.dart';
 import 'package:mzingaa/utils/dimensions.dart';
-import 'package:mzingaa/widgets/icon_and_text_widget.dart';
+import 'package:mzingaa/widgets/icon_and%20text_widget.dart';
 import 'package:mzingaa/widgets/small_text.dart';
 
 class LiqourPageBody extends StatefulWidget {

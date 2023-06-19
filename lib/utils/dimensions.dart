@@ -2,7 +2,7 @@
 import 'package:get/get.dart';
 
 class Dimensions{
-<<<<<<< HEAD
+
   //TO GET THE DIMENSIONS OF THE CURRENT DEVICE WE ARE USING
   static double screenHeight =Get.context!.height;
   static double screenWidth =Get.context!.width;
@@ -28,15 +28,4 @@ class Dimensions{
   static double font20=screenHeight/42.2;
   static double radius20=screenHeight/42.2;
   static double radius30=screenHeight/28.13;
-
-
-=======
-  static double screenHeight =Get.context!.height;
-  static double screenWidth =Get.context!.width;
-
-  static double pageViewContainer=screenHeight/3.84;
-  static double pageViewTextContainer=screenHeight/7.03;
-
->>>>>>> 86caf848873815ae2d95b6b2a5303d48ff2790b2
-
 }
