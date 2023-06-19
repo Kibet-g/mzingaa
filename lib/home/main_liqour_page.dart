@@ -41,7 +41,7 @@ class _MainLiquorPageState extends State<MainLiquorPage> {
         children: [
           Container(
             //here should not be hard coded also for device compatabilty
-            margin: const EdgeInsets.only(top: 45, bottom: 15),
+            margin:  EdgeInsets.only(top:Dimensions.height45, bottom:Dimensions.height15),
             padding:  EdgeInsets.only(left: Dimensions.width20, right: Dimensions.width20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -59,8 +59,8 @@ class _MainLiquorPageState extends State<MainLiquorPage> {
                   ],
                 ),
                 Container(
-                  width: 45,
-                  height: 45,
+                  width: Dimensions.height45,
+                  height: Dimensions.height45,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
                     color: AppColors.mainColor,
