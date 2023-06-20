@@ -40,7 +40,7 @@ class _MainLiquorPageState extends State<MainLiquorPage> {
       body: Column(
         children: [
           Container(
-            //here should not be hard coded also for device compatabilty
+            //here should not be hard coded also for device compatibility
             margin:  EdgeInsets.only(top:Dimensions.height45, bottom:Dimensions.height15),
             padding:  EdgeInsets.only(left: Dimensions.width20, right: Dimensions.width20),
             child: Row(
@@ -65,7 +65,7 @@ class _MainLiquorPageState extends State<MainLiquorPage> {
                     borderRadius: BorderRadius.circular(15),
                     color: AppColors.mainColor,
                   ),
-                  child: const Icon(Icons.search, color: Colors.white),
+                  child:  Icon(Icons.search, color: Colors.white, size:Dimensions.iconsize24),
                 ),
               ],
             ),
