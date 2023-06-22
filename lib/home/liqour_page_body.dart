@@ -40,6 +40,7 @@ class _LiqourPageBodyState extends State<LiqourPageBody> {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        //slider section
         Container(
           height: Dimensions.pageView,
           child: PageView.builder(
@@ -50,8 +51,9 @@ class _LiqourPageBodyState extends State<LiqourPageBody> {
             },
           ),
         ),
+        //dots
         // FLUTTER PACKAGE FOR OUR DOT SCROLLING EFFECT
-        DotsIndicator(
+        new DotsIndicator(
           dotsCount: 5,
           position: currPageValue.toInt(),
           decorator: DotsDecorator(
@@ -62,6 +64,21 @@ class _LiqourPageBodyState extends State<LiqourPageBody> {
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
           ),
         ),
+
+        //popular text
+        SizedBox(height: Dimensions.height30,),
+        Container(
+          margin: EdgeInsets.only(left:Dimensions.width30),
+          child: Row(
+            children: [
+              BigText(text: "Popular", color: Colors.black26,),
+              Container(
+                child:BigText(text: ".",color: Colors.black26,) ,
+              ),
+              SizedBox(width: Dimensions.width10,),
+            ],
+          ),
+        )
       ],
     );
   }
